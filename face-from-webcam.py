@@ -1,7 +1,11 @@
 import face_recognition
 import cv2
 
-# you will need to install the following packages to make this work
+# instructions from ryan
+################################################################################################
+# use python 3.6 (3.4 or 3.5 should work too)
+# you will need to install the following packages to make this work with
+# Hit 'q' on the keyboard to quit
 #
 # "package-name==version"
 #
@@ -12,7 +16,7 @@ import cv2
 # numpy==1.14.2
 # opencv-python==3.4.0.12
 # Pillow==5.1.0
-
+#################################################################################################
 
 # This is a super simple (but slow) example of running face recognition on live video from your webcam.
 # There's a second example that's a little more complicated but runs faster.
@@ -21,8 +25,16 @@ import cv2
 # OpenCV is *not* required to use the face_recognition library. It's only required if you want to run this
 # specific demo. If you have trouble installing it, try any of the other demos that don't require it instead.
 
+
+
+
 # Get a reference to webcam #0 (the default one)
 video_capture = cv2.VideoCapture(0)
+
+
+
+
+
 
 # Load a sample picture and learn how to recognize it.
 obama_image = face_recognition.load_image_file("obama.jpg")
@@ -34,9 +46,14 @@ biden_image = face_recognition.load_image_file("biden.jpg")
 biden_face_encoding = face_recognition.face_encodings(biden_image)[0]
 
 
-# Load a sample picture and learn how to recognize it.
-ryan_image = face_recognition.load_image_file("ryan.jpg")
-ryan_face_encoding = face_recognition.face_encodings(ryan_image)[0]
+
+
+
+###################################################################################################
+# Ryan did the code below
+
+# connect an image to an encoding, i show a 2-line and an 1-line way to do this
+ryan_face_encoding = face_recognition.face_encodings(face_recognition.load_image_file("ryan.jpg"))[0]
 
 rene_image = face_recognition.load_image_file("rene.jpg")
 rene_face_encoding = face_recognition.face_encodings(rene_image)[0]
@@ -47,22 +64,26 @@ victoria_face_encoding = face_recognition.face_encodings(victoria_image)[0]
 starling_image = face_recognition.load_image_file("starling.jpg")
 starling_face_encoding = face_recognition.face_encodings(starling_image)[0]
 
+
+###################################################################################################
+
+
 # Create arrays of known face encodings and their names
 known_face_encodings = [
     obama_face_encoding,
     biden_face_encoding,
-    ryan_face_encoding,
-    rene_face_encoding,
-    victoria_face_encoding,
-    starling_face_encoding,
+    ryan_face_encoding,  # <---- connect the encoding you made above here
+    rene_face_encoding,  # <---- connect the encoding you made above here
+    victoria_face_encoding,   # <---- connect the encoding you made above here
+    starling_face_encoding,  # <---- connect the encoding you made above here
 ]
 known_face_names = [
     "Barack Obama",
     "Joe Biden",
-    "Ryan Burton",
-    "Rene George",
-    "Victoria Lawton",
-    "Leyf Starling"
+    "Ryan Burton",   # <---- add the correct name in the same order as the known_face_encodings
+    "Rene George",   # <---- connect the encoding you made above here
+    "Victoria Lawton",  # <---- connect the encoding you made above here
+    "Leyf Starling"   # <---- connect the encoding you made above here
 
 
 
