@@ -55,8 +55,8 @@ biden_face_encoding = face_recognition.face_encodings(biden_image)[0]
 # connect an image to an encoding, i show a 2-line and an 1-line way to do this
 ryan_face_encoding = face_recognition.face_encodings(face_recognition.load_image_file("ryan.jpg"))[0]
 
-rene_image = face_recognition.load_image_file("rene.jpg")
-rene_face_encoding = face_recognition.face_encodings(rene_image)[0]
+renee_image = face_recognition.load_image_file("renee.jpg")
+renee_face_encoding = face_recognition.face_encodings(renee_image)[0]
 
 victoria_image = face_recognition.load_image_file("victoria.jpg")
 victoria_face_encoding = face_recognition.face_encodings(victoria_image)[0]
@@ -73,7 +73,7 @@ known_face_encodings = [
     obama_face_encoding,
     biden_face_encoding,
     ryan_face_encoding,  # <---- connect the encoding you made above here
-    rene_face_encoding,  # <---- connect the encoding you made above here
+    renee_face_encoding,  # <---- connect the encoding you made above here
     victoria_face_encoding,   # <---- connect the encoding you made above here
     starling_face_encoding,  # <---- connect the encoding you made above here
 ]
@@ -81,7 +81,7 @@ known_face_names = [
     "Barack Obama",
     "Joe Biden",
     "Ryan Burton",   # <---- add the correct name in the same order as the known_face_encodings
-    "Rene George",   # <---- connect the encoding you made above here
+    "Renee George",   # <---- connect the encoding you made above here
     "Victoria Lawton",  # <---- connect the encoding you made above here
     "Leyf Starling"   # <---- connect the encoding you made above here
 
